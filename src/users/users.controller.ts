@@ -16,7 +16,6 @@ createUser(@Body() body:CreateUserDto){
   this.userService.create(body.email , body.password);
 }
 
-
 @Get('/:id')
 async findUser(@Param('id') id:string){
   const user = await this.userService.findOne(parseInt(id))
@@ -40,5 +39,4 @@ updateUser(@Body() body:UpdateUserDto , @Param('id') id:string){
 removeUser(@Param('id') id:string){
   return this.userService.remove(parseInt(id))
 }
-
 }
